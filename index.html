@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bharath Punati — Data & AI Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #050c14;
+    --bg2: #091420;
+    --card: #0d1f2f;
+    --card2: #112333;
+    --accent: #00c8ff;
+    --text: #e8f4fc;
+    --muted: #7da9c0;
+    --border: rgba(0,200,255,0.12);
+    --glow: rgba(0,200,255,0.18);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; line-height: 1.7; overflow-x: hidden; }
+  h1, h2, h3, h4, .nav-logo { font-family: 'Syne', sans-serif; font-weight: 700; }
+  a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    background: rgba(5,12,20,0.85); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border); padding: 1rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-logo { font-size: 1.2rem; color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a:hover { color: var(--accent); }
+
+  #hero {
+    height: 100vh; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(0,200,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,200,255,0.04) 1px, transparent 1px);
+    background-size: 48px 48px; pointer-events: none;
+  }
+  .hero-glow {
+    position: absolute; top: -100px; right: -150px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,119,182,0.2) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-title { font-size: clamp(3rem, 8vw, 6rem); line-height: 1; position: relative; }
+  .accent-text { color: var(--accent); }
+  .hero-sub { color: var(--muted); margin-top: 1rem; font-size: 1.05rem; position: relative; }
+
+  section { padding: 6rem 8% 4rem; }
+  .section-label { color: var(--accent); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; margin-bottom: .8rem; display: block; }
+  .section-title { font-size: 2.2rem; margin-bottom: 2.5rem; }
+
+  /* EXPERIENCE */
+  .exp-item { margin-bottom: 3rem; padding-left: 2rem; border-left: 2px solid var(--border); transition: border-color .2s; }
+  .exp-item:hover { border-color: var(--accent); }
+  .exp-company { font-size: 1.3rem; }
+  .exp-date { color: var(--accent); font-weight: 600; font-size: .85rem; margin: .2rem 0 .5rem; }
+  .exp-item p { color: var(--muted); font-size: .93rem; }
+
+  /* ARTIFACTS */
+  .artifacts-grid { display: flex; flex-direction: column; gap: 4rem; }
+  .artifact-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 20px; overflow: hidden;
+    transition: box-shadow .3s, transform .3s;
+  }
+  .artifact-card:hover { box-shadow: 0 12px 48px var(--glow); transform: translateY(-3px); }
+
+  .artifact-header {
+    padding: 2.5rem 3rem; background: var(--card2);
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;
+  }
+  .artifact-header-left { flex: 1; }
+  .artifact-num { font-size: 3.5rem; font-weight: 800; color: rgba(0,200,255,0.1); line-height: 1; margin-bottom: .3rem; }
+  .artifact-title { font-size: 1.7rem; color: var(--accent); line-height: 1.2; margin-bottom: .8rem; }
+  .artifact-intro { color: var(--muted); font-size: .95rem; max-width: 680px; }
+  .artifact-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
+  .atag {
+    background: rgba(0,200,255,0.08); border: 1px solid var(--border);
+    color: #38bdf8; font-size: .72rem; font-weight: 600;
+    padding: .25rem .7rem; border-radius: 2rem; text-transform: uppercase; letter-spacing: .05em;
+  }
+
+  .artifact-body { padding: 2.5rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .artifact-section h4 {
+    font-family: 'Syne', sans-serif; font-size: .72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .14em; color: var(--accent);
+    margin-bottom: .7rem; padding-bottom: .4rem; border-bottom: 1px solid var(--border);
+  }
+  .artifact-section p { color: var(--muted); font-size: .92rem; line-height: 1.75; }
+  .artifact-section ul { list-style: none; padding: 0; }
+  .artifact-section ul li { color: var(--muted); font-size: .92rem; padding-left: 1.1rem; position: relative; margin-bottom: .45rem; }
+  .artifact-section ul li::before { content: '›'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .artifact-full { grid-column: span 2; }
+
+  .value-box {
+    background: rgba(0,200,255,0.05); border-left: 3px solid var(--accent);
+    padding: 1.5rem 1.8rem; border-radius: 6px;
+  }
+  .value-box .vb-label { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
+  .value-box p { color: var(--muted); font-size: .9rem; }
+
+  .refs-list { list-style: none; padding: 0; counter-reset: r; }
+  .refs-list li { counter-increment: r; position: relative; padding-left: 1.8rem; color: var(--muted); font-size: .82rem; margin-bottom: .4rem; line-height: 1.6; }
+  .refs-list li::before { content: counter(r) "."; position: absolute; left: 0; color: var(--accent); font-weight: 600; }
+
+  .artifact-footer {
+    padding: 1.5rem 3rem; background: rgba(5,12,20,0.5);
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .tools-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .tool-chip {
+    background: rgba(0,119,182,0.15); border: 1px solid rgba(0,119,182,0.3);
+    color: #38bdf8; font-size: .75rem; padding: .22rem .65rem; border-radius: .3rem;
+  }
+  .artifact-link {
+    background: var(--accent); color: #030a10;
+    padding: .7rem 1.4rem; border-radius: 10px; font-weight: 700; font-size: .88rem;
+    transition: background .2s, transform .2s;
+  }
+  .artifact-link:hover { background: #38d8f7; transform: translateY(-1px); }
+
+  /* CONTACT */
+  .contact-links { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem; }
+  .contact-link { padding: .85rem 1.8rem; border: 1px solid var(--border); border-radius: 100px; font-size: .9rem; transition: all .2s; }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+
+  footer { text-align: center; padding: 3rem; color: var(--muted); border-top: 1px solid var(--border); font-size: .85rem; }
+
+  @media (max-width: 900px) {
+    .artifact-body { grid-template-columns: 1fr; }
+    .artifact-full { grid-column: span 1; }
+    .artifact-header { flex-direction: column; }
+    section { padding: 5rem 5% 3rem; }
+  }
+  @media (max-width: 520px) { .nav-links { display: none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">About</div>
+  <div class="nav-links">
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#artifacts">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <h1 class="hero-title">Bharath<br/><span class="accent-text">Punati</span></h1>
+  <p class="hero-sub">Systems Analyst at Qualcomm &nbsp;|&nbsp; Data Analytics & AI Engineering</p>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background: var(--bg2);">
+  <span class="section-label">Career</span>
+  <h2 class="section-title">Experience</h2>
+  <div class="exp-item">
+    <div class="exp-company">Qualcomm — San Diego, CA</div>
+    <div class="exp-date">SYSTEMS ANALYST, STAFF &nbsp;·&nbsp; JUNE 2024 – PRESENT</div>
+    <p>AI-powered self-service reporting with Databricks Genie + proprietary LLM, Salesforce migration, end-to-end ETL pipelines, and data quality framework using Acceldata.</p>
+  </div>
+  <div class="exp-item">
+    <div class="exp-company">Denken Solutions — Irvine, CA</div>
+    <div class="exp-date">DATA ENGINEER &nbsp;·&nbsp; JAN 2023 – JUNE 2024</div>
+    <p>Apache Airflow pipeline automation, Snowflake warehousing, SCD implementation using Kimball Toolkit, churn prediction modeling, and LLM training dataset curation.</p>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <span class="section-label">Academic Background</span>
+  <h2 class="section-title">Education</h2>
+  <div style="display:flex; flex-direction:column; gap:1.2rem; max-width:760px;">
+    <div style="background:var(--card); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:.7rem; padding:1.8rem 2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; transition:transform .2s;" onmouseover="this.style.transform='translateX(4px)'" onmouseout="this.style.transform='none'">
+      <div>
+        <div style="font-family:'Syne',sans-serif; font-size:1.05rem; font-weight:700; margin-bottom:.3rem;">M.S. in Data Analytics Engineering</div>
+        <div style="color:var(--accent); font-size:.9rem;">Northeastern University &nbsp;·&nbsp; Boston, MA</div>
+      </div>
+      <div style="background:rgba(0,200,255,0.08); border:1px solid var(--border); color:#38bdf8; font-size:.78rem; font-weight:600; padding:.4rem 1rem; border-radius:2rem; white-space:nowrap;">Graduate</div>
+    </div>
+    <div style="background:var(--card); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:.7rem; padding:1.8rem 2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; transition:transform .2s;" onmouseover="this.style.transform='translateX(4px)'" onmouseout="this.style.transform='none'">
+      <div>
+        <div style="font-family:'Syne',sans-serif; font-size:1.05rem; font-weight:700; margin-bottom:.3rem;">B.Tech in Electronics &amp; Communication Engineering</div>
+        <div style="color:var(--accent); font-size:.9rem;">SRM University &nbsp;·&nbsp; India</div>
+      </div>
+      <div style="background:rgba(0,200,255,0.08); border:1px solid var(--border); color:#38bdf8; font-size:.78rem; font-weight:600; padding:.4rem 1rem; border-radius:2rem; white-space:nowrap;">Undergraduate</div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTIFACTS -->
+<section id="artifacts">
+  <span class="section-label">Course Portfolio</span>
+  <h2 class="section-title">Artifacts</h2>
+  <div class="artifacts-grid">
+
+    <!-- ARTIFACT 1 -->
+    <div class="artifact-card">
+      <div class="artifact-header">
+        <div class="artifact-header-left">
+          <div class="artifact-num">1.3</div>
+          <div class="artifact-title">A History of Artificial Intelligence</div>
+          <p class="artifact-intro">A visual timeline tracing major AI milestones, breakthroughs, and winters from 1950 through the frontier model era of 2023–2024 — from Alan Turing's imitation game to Claude, GPT-4, and the EU AI Act.</p>
+          <div class="artifact-tags">
+            <span class="atag">AI History</span>
+            <span class="atag">Research Synthesis</span>
+            <span class="atag">Timeline</span>
+            <span class="atag">Academic</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="artifact-body">
+        <div class="artifact-section">
+          <h4>Objective</h4>
+          <p>To synthesize 70+ years of AI evolution into a structured, accurate, and accessible visual timeline — identifying the foundational milestones, cyclical "AI Winters," and the transformative breakthroughs of the deep learning era that continue to shape technology today.</p>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Process</h4>
+          <ul>
+            <li>Researched primary and secondary sources covering AI history from 1950 to 2024.</li>
+            <li>Identified key events: Turing Test (1950), Dartmouth Conference (1956), both AI Winters, Deep Blue (1997), AlexNet (2012), Transformer architecture (2017), AlphaFold 2 (2021), and ChatGPT (2022).</li>
+            <li>Organized milestones chronologically with legend categories: Foundational, AI Winter, Deep Learning Era, Major Models.</li>
+            <li>Crafted concise, accurate descriptions for each milestone grounded in cited academic sources.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Key Milestones</h4>
+          <ul>
+            <li><strong>1950</strong> — Turing Test proposed by Alan Turing</li>
+            <li><strong>1956</strong> — Dartmouth Conference: AI formally named</li>
+            <li><strong>1974–1993</strong> — Two AI Winters: funding cuts & expert system collapse</li>
+            <li><strong>1997</strong> — Deep Blue defeats Kasparov (IBM)</li>
+            <li><strong>2012</strong> — AlexNet launches the deep learning era</li>
+            <li><strong>2017</strong> — "Attention Is All You Need" — the Transformer</li>
+            <li><strong>2021</strong> — AlphaFold 2 solves protein folding (Nobel Prize 2024)</li>
+            <li><strong>2022</strong> — ChatGPT: 100M users in 2 months</li>
+            <li><strong>2023–24</strong> — GPT-4, Claude, Gemini, o1 — frontier model race</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Key Findings</h4>
+          <p>AI progress is cyclical — periods of inflated expectation followed by funding collapses ("Winters") have recurred throughout the field's history. The modern era is defined by the 2012 deep learning breakthrough and the 2017 Transformer architecture, which underpins virtually every major language model today including BERT, GPT, LLaMA, Claude, and Gemini.</p>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <div class="value-box">
+            <div class="vb-label">✦ Value Proposition</div>
+            <p>This artifact demonstrates the ability to research, synthesize, and communicate a complex, multi-decade technical history in a structured and accessible format. It reflects a deep strategic understanding of how AI has evolved — equipping stakeholders with the historical context needed to make informed decisions about AI adoption, strategy, and ethics. Relevant for educators, students, AI practitioners, and any professional navigating the modern AI landscape.</p>
+          </div>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <h4>References</h4>
+          <ol class="refs-list">
+            <li>Turing, A. M. (1950). Computing machinery and intelligence. <em>Mind, 59</em>(236), 433–460.</li>
+            <li>McCarthy, J., et al. (1955). A proposal for the Dartmouth summer research project on artificial intelligence. <em>AI Magazine, 27</em>(4), 12–14.</li>
+            <li>Lighthill, J. (1973). Artificial intelligence: A general survey. Science Research Council, UK.</li>
+            <li>Campbell, M., Hoane, A. J., & Hsu, F. H. (2002). Deep Blue. <em>Artificial Intelligence, 134</em>(1–2), 57–83.</li>
+            <li>Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. <em>NeurIPS, 25</em>.</li>
+            <li>Vaswani, A., et al. (2017). Attention is all you need. <em>NeurIPS, 30</em>.</li>
+            <li>Jumper, J., et al. (2021). Highly accurate protein structure prediction with AlphaFold. <em>Nature, 596</em>(7873), 583–589.</li>
+            <li>OpenAI. (2022). ChatGPT: Optimizing language models for dialogue. <em>OpenAI Blog</em>.</li>
+            <li>Anthropic. (2022). Constitutional AI: Harmlessness from AI feedback. <em>arXiv:2212.08073</em>.</li>
+            <li>European Parliament. (2024). EU Artificial Intelligence Act. <em>Official Journal of the European Union</em>.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="artifact-footer">
+        <div class="tools-row">
+          <span class="tool-chip">Research Synthesis</span>
+          <span class="tool-chip">Academic Writing</span>
+          <span class="tool-chip">Visual Timeline</span>
+          <span class="tool-chip">APA Citations</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARTIFACT 2 -->
+    <div class="artifact-card">
+      <div class="artifact-header">
+        <div class="artifact-header-left">
+          <div class="artifact-num">1.4</div>
+          <div class="artifact-title">ShopBot: Generative AI Customer Service Assistant</div>
+          <p class="artifact-intro">A fully functional AI-powered retail chatbot built using Design Thinking methodology — from empathy mapping and problem definition through prototyping, prompt engineering, and iterative testing on Botpress.</p>
+          <div class="artifact-tags">
+            <span class="atag">Generative AI</span>
+            <span class="atag">Prompt Engineering</span>
+            <span class="atag">Design Thinking</span>
+            <span class="atag">Chatbot</span>
+            <span class="atag">LLM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="artifact-body">
+        <div class="artifact-section">
+          <h4>Objective</h4>
+          <p>To design and build an empathy-driven AI customer service chatbot for an online retail store — capable of handling order inquiries, return policy questions, and product support at scale while maintaining a consistent, brand-aligned tone without human escalation.</p>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Process</h4>
+          <ul>
+            <li><strong>Empathy:</strong> Identified user pain points — long wait times, repetitive explanations, feeling unheard.</li>
+            <li><strong>Define:</strong> Problem statement: customers need fast, friendly, accurate support without waiting for a human agent.</li>
+            <li><strong>Ideate:</strong> Evaluated rule-based FAQ bot, generative AI assistant, and hybrid human-escalation models.</li>
+            <li><strong>Prototype:</strong> Built ShopBot in Botpress using a detailed system prompt with persona, constraints, and return policy specifics.</li>
+            <li><strong>Test:</strong> Ran 5 scenarios validating each system prompt rule; made 2 iterative improvements.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section">
+          <h4>LLM Testing (Section 1)</h4>
+          <ul>
+            <li>Used ChatGPT with a Context / Task / Constraints prompt framework across 3 separate sessions.</li>
+            <li>Chat 1: Warm, empathetic, stayed within word limit — met all criteria.</li>
+            <li>Chat 2: More formal; added unprompted free-shipping offer — showed LLM creativity drift.</li>
+            <li>Chat 3: Most concise and natural-sounding overall — best tone match.</li>
+            <li>Key insight: Same prompt produces meaningfully different outputs — tone, formality, and extras varied.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section">
+          <h4>STORM AI Research (Section 3)</h4>
+          <ul>
+            <li>Researched "Customer Service Chatbots in E-Commerce" using STORM AI.</li>
+            <li>STORM breaks topics into specific questions (simulating a research interview), then synthesizes structured articles with citations.</li>
+            <li>Output covered chatbot history, current e-commerce applications, challenges (complex queries, human-like tone), and generative AI future trends.</li>
+            <li>Key takeaway: Brainstorming transparency helps evaluate AI-generated information more critically.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Iterations & Challenges</h4>
+          <ul>
+            <li><strong>Challenge:</strong> Bot gave vague answers about return policy — no specifics in prompt.<br/><strong>Fix:</strong> Added explicit policy details (30-day window, original packaging required).</li>
+            <li><strong>Challenge:</strong> Opening greeting varied too much between sessions.<br/><strong>Fix:</strong> Added a specific example greeting to anchor tone from the first message.</li>
+            <li><strong>Challenge:</strong> Bot answered unrelated general knowledge questions.<br/><strong>Fix:</strong> Added constraint "do not engage in conversations unrelated to the store."</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <div class="value-box">
+            <div class="vb-label">✦ Value Proposition</div>
+            <p>This artifact demonstrates the ability to bridge the gap between raw LLM technology and a practical, production-ready customer service application. The end-to-end Design Thinking process — from user empathy through iterative prompt engineering — mirrors real-world AI product development. It proves that AI output quality is directly proportional to the quality of instructions given, and that empathy-driven design produces more user-focused, reliable AI systems. Applicable to any industry deploying conversational AI for customer engagement.</p>
+          </div>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <h4>References</h4>
+          <ol class="refs-list">
+            <li>OpenAI. (2023). <em>ChatGPT model card</em>. OpenAI. https://openai.com/chatgpt</li>
+            <li>Botpress Inc. (2024). <em>Botpress platform documentation</em>. https://botpress.com/docs</li>
+            <li>Shao, Y., et al. (2024). Assisting in writing Wikipedia-like articles from scratch with large language models (STORM AI). <em>arXiv:2402.14207</em>.</li>
+            <li>Brown, T., et al. (2020). Language models are few-shot learners (GPT-3). <em>NeurIPS, 33</em>, 1877–1901.</li>
+            <li>IDEO. (2015). <em>Design thinking for educators toolkit</em> (2nd ed.). IDEO.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="artifact-footer">
+        <div class="tools-row">
+          <span class="tool-chip">Botpress</span>
+          <span class="tool-chip">ChatGPT</span>
+          <span class="tool-chip">STORM AI</span>
+          <span class="tool-chip">Prompt Engineering</span>
+          <span class="tool-chip">Design Thinking</span>
+        </div>
+        <a href="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/03/12/23/20260312233423-II0S4PCY.json" target="_blank" class="artifact-link">Live Bot ↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background: var(--bg2); text-align: center;">
+  <span class="section-label">Get In Touch</span>
+  <h2 class="section-title">Contact</h2>
+  <div class="contact-links">
+    <a href="mailto:bpunatti@gmail.com" class="contact-link">✉ bpunatti@gmail.com</a>
+    <a href="tel:+19254480536" class="contact-link">📞 (925) 448-0536</a>
+    <a href="#" class="contact-link">💼 LinkedIn</a>
+    <span class="contact-link">📍 San Diego, CA</span>
+  </div>
+</section>
+
+<footer>© 2026 Bharath Punati &nbsp;·&nbsp; Data Analytics Engineering Portfolio &nbsp;·&nbsp; Indiana Wesleyan University</footer>
+
+</body>
+</html>
