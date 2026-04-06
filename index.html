@@ -59,6 +59,20 @@
   .section-label { color: var(--accent); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; margin-bottom: .8rem; display: block; }
   .section-title { font-size: 2.2rem; margin-bottom: 2.5rem; }
 
+  /* WORKSHOP DIVIDER */
+  .workshop-divider {
+    display: flex; align-items: center; gap: 1.2rem;
+    margin-bottom: 3rem; margin-top: 1rem;
+  }
+  .workshop-divider-label {
+    font-family: 'Syne', sans-serif; font-size: .7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .18em; color: var(--accent);
+    white-space: nowrap; padding: .35rem 1rem;
+    border: 1px solid var(--border); border-radius: 2rem;
+    background: rgba(0,200,255,0.06);
+  }
+  .workshop-divider-line { flex: 1; height: 1px; background: var(--border); }
+
   /* EXPERIENCE */
   .exp-item { margin-bottom: 3rem; padding-left: 2rem; border-left: 2px solid var(--border); transition: border-color .2s; }
   .exp-item:hover { border-color: var(--accent); }
@@ -109,6 +123,38 @@
   }
   .value-box .vb-label { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
   .value-box p { color: var(--muted); font-size: .9rem; }
+
+  /* QUOTE BLOCK — new for workshop 3 */
+  .quote-block {
+    background: rgba(0,200,255,0.04); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.4rem 1.8rem; margin-top: .8rem;
+    position: relative;
+  }
+  .quote-block::before {
+    content: '"'; font-size: 4rem; font-family: 'Syne', sans-serif; font-weight: 800;
+    color: rgba(0,200,255,0.15); position: absolute; top: -10px; left: 14px; line-height: 1;
+  }
+  .quote-block p { color: var(--muted); font-size: .9rem; font-style: italic; padding-left: .5rem; }
+  .quote-block .quote-author { font-style: normal; font-size: .78rem; color: var(--accent); margin-top: .5rem; display: block; }
+
+  /* CHAT DIALOGUE — new for workshop 3 */
+  .chat-flow { display: flex; flex-direction: column; gap: .8rem; margin-top: .4rem; }
+  .chat-bubble {
+    padding: .8rem 1.1rem; border-radius: 12px; font-size: .88rem; max-width: 90%;
+    line-height: 1.6;
+  }
+  .chat-bubble.user {
+    background: rgba(0,200,255,0.1); border: 1px solid var(--border);
+    color: var(--text); align-self: flex-end; border-bottom-right-radius: 3px;
+  }
+  .chat-bubble.bot {
+    background: rgba(17,35,51,0.9); border: 1px solid var(--border);
+    color: var(--muted); align-self: flex-start; border-bottom-left-radius: 3px;
+  }
+  .chat-label { font-size: .65rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .1em; margin-bottom: .3rem; }
+  .chat-label.u { color: var(--accent); text-align: right; }
+  .chat-label.b { color: var(--muted); }
 
   .refs-list { list-style: none; padding: 0; counter-reset: r; }
   .refs-list li { counter-increment: r; position: relative; padding-left: 1.8rem; color: var(--muted); font-size: .82rem; margin-bottom: .4rem; line-height: 1.6; }
@@ -211,7 +257,13 @@
   <h2 class="section-title">Artifacts</h2>
   <div class="artifacts-grid">
 
-    <!-- ARTIFACT 1 -->
+    <!-- WORKSHOP 1 DIVIDER -->
+    <div class="workshop-divider">
+      <span class="workshop-divider-label">Workshop 1</span>
+      <div class="workshop-divider-line"></div>
+    </div>
+
+    <!-- ARTIFACT 1.3 -->
     <div class="artifact-card">
       <div class="artifact-header">
         <div class="artifact-header-left">
@@ -266,7 +318,7 @@
         <div class="artifact-section artifact-full">
           <div class="value-box">
             <div class="vb-label">✦ Value Proposition</div>
-            <p>This artifact demonstrates the ability to research, synthesize, and communicate a complex, multi-decade technical history in a structured and accessible format. It reflects a deep strategic understanding of how AI has evolved — equipping stakeholders with the historical context needed to make informed decisions about AI adoption, strategy, and ethics. Relevant for educators, students, AI practitioners, and any professional navigating the modern AI landscape.</p>
+            <p>This artifact demonstrates the ability to research, synthesize, and communicate a complex, multi-decade technical history in a structured and accessible format. It reflects a deep strategic understanding of how AI has evolved — equipping stakeholders with the historical context needed to make informed decisions about AI adoption, strategy, and ethics.</p>
           </div>
         </div>
 
@@ -297,7 +349,7 @@
       </div>
     </div>
 
-    <!-- ARTIFACT 2 -->
+    <!-- ARTIFACT 1.4 -->
     <div class="artifact-card">
       <div class="artifact-header">
         <div class="artifact-header-left">
@@ -347,24 +399,15 @@
           <ul>
             <li>Researched "Customer Service Chatbots in E-Commerce" using STORM AI.</li>
             <li>STORM breaks topics into specific questions (simulating a research interview), then synthesizes structured articles with citations.</li>
-            <li>Output covered chatbot history, current e-commerce applications, challenges (complex queries, human-like tone), and generative AI future trends.</li>
+            <li>Output covered chatbot history, current e-commerce applications, challenges, and generative AI future trends.</li>
             <li>Key takeaway: Brainstorming transparency helps evaluate AI-generated information more critically.</li>
-          </ul>
-        </div>
-
-        <div class="artifact-section">
-          <h4>Iterations & Challenges</h4>
-          <ul>
-            <li><strong>Challenge:</strong> Bot gave vague answers about return policy — no specifics in prompt.<br/><strong>Fix:</strong> Added explicit policy details (30-day window, original packaging required).</li>
-            <li><strong>Challenge:</strong> Opening greeting varied too much between sessions.<br/><strong>Fix:</strong> Added a specific example greeting to anchor tone from the first message.</li>
-            <li><strong>Challenge:</strong> Bot answered unrelated general knowledge questions.<br/><strong>Fix:</strong> Added constraint "do not engage in conversations unrelated to the store."</li>
           </ul>
         </div>
 
         <div class="artifact-section artifact-full">
           <div class="value-box">
             <div class="vb-label">✦ Value Proposition</div>
-            <p>This artifact demonstrates the ability to bridge the gap between raw LLM technology and a practical, production-ready customer service application. The end-to-end Design Thinking process — from user empathy through iterative prompt engineering — mirrors real-world AI product development. It proves that AI output quality is directly proportional to the quality of instructions given, and that empathy-driven design produces more user-focused, reliable AI systems. Applicable to any industry deploying conversational AI for customer engagement.</p>
+            <p>This artifact demonstrates the ability to bridge the gap between raw LLM technology and a practical, production-ready customer service application. The end-to-end Design Thinking process mirrors real-world AI product development. It proves that AI output quality is directly proportional to the quality of instructions given, and that empathy-driven design produces more user-focused, reliable AI systems.</p>
           </div>
         </div>
 
@@ -392,7 +435,13 @@
       </div>
     </div>
 
-    <!-- ARTIFACT 3: FAKE REVIEW DETECTION -->
+    <!-- WORKSHOP 2 DIVIDER -->
+    <div class="workshop-divider">
+      <span class="workshop-divider-label">Workshop 2</span>
+      <div class="workshop-divider-line"></div>
+    </div>
+
+    <!-- ARTIFACT 2.3 -->
     <div class="artifact-card">
       <div class="artifact-header">
         <div class="artifact-header-left">
@@ -413,7 +462,7 @@
       <div class="artifact-body">
         <div class="artifact-section">
           <h4>Problem Statement</h4>
-          <p>E-commerce platforms face a critical challenge: 40% of online reviews are estimated to be fraudulent. Fake reviews erode consumer trust, inflate product ratings artificially, and cost the industry $152 billion annually. Manual moderation is expensive, slow, and inconsistent. There is an urgent need for an automated, scalable, and interpretable detection system that can process thousands of reviews per second.</p>
+          <p>E-commerce platforms face a critical challenge: 40% of online reviews are estimated to be fraudulent. Fake reviews erode consumer trust, inflate product ratings artificially, and cost the industry $152 billion annually. Manual moderation is expensive, slow, and inconsistent.</p>
         </div>
 
         <div class="artifact-section">
@@ -431,7 +480,7 @@
           <ul>
             <li><strong>Account Signals:</strong> Account age, verified purchase status, location consistency, linked accounts, review velocity.</li>
             <li><strong>Review Signals:</strong> Text length, sentiment polarity, language patterns, readability score, detail level, presence of links.</li>
-            <li><strong>Network Signals:</strong> Text similarity to other reviews, timing clusters, co-occurrence with suspicious accounts, target product patterns, rating distribution anomalies.</li>
+            <li><strong>Network Signals:</strong> Text similarity, timing clusters, co-occurrence with suspicious accounts, target product patterns, rating distribution anomalies.</li>
           </ul>
         </div>
 
@@ -448,21 +497,9 @@
         </div>
 
         <div class="artifact-section artifact-full">
-          <h4>Why Random Forest?</h4>
-          <ul>
-            <li><strong>Handles mixed data types:</strong> No preprocessing of numeric, categorical, or boolean features required.</li>
-            <li><strong>Non-linear interactions:</strong> Automatically discovers complex patterns (e.g., "new account + fast posting + text similarity").</li>
-            <li><strong>Interpretability:</strong> Feature importance reveals which signals matter most; decision paths explain individual predictions.</li>
-            <li><strong>Speed:</strong> Fast training and millisecond inference — production-ready.</li>
-            <li><strong>Class imbalance:</strong> Built-in class weighting handles 3% fake, 97% genuine ratio naturally.</li>
-            <li><strong>Proven at scale:</strong> Used by Amazon, Yelp, and Airbnb for similar detection tasks.</li>
-          </ul>
-        </div>
-
-        <div class="artifact-section artifact-full">
           <div class="value-box">
             <div class="vb-label">✦ Value Proposition</div>
-            <p>This project demonstrates the ability to design, implement, and evaluate a real-world machine learning system that solves a tangible business problem while maintaining ethical and regulatory standards. The Random Forest model achieves 91.2% accuracy, processes reviews in milliseconds, and remains fully interpretable — a critical requirement for consumer-facing ML systems. The solution is production-ready and scalable to handle millions of reviews daily. It showcases deep technical expertise in feature engineering, ensemble methods, class imbalance handling, and interpretable AI — skills essential for deploying trustworthy ML systems in regulated industries.</p>
+            <p>This project demonstrates the ability to design, implement, and evaluate a real-world machine learning system that solves a tangible business problem while maintaining ethical and regulatory standards. The Random Forest model achieves 91.2% accuracy, processes reviews in milliseconds, and remains fully interpretable — a critical requirement for consumer-facing ML systems.</p>
           </div>
         </div>
 
@@ -470,9 +507,8 @@
           <h4>References</h4>
           <ol class="refs-list">
             <li>Breiman, L. (2001). Random forests. <em>Machine Learning, 45</em>(1), 5–32.</li>
-            <li>Caruana, R., Lou, Y., Guestrin, C., Kasneci, G., Rastkar, V., & Schafer, K. (2015). Intelligible models for classification and regression. <em>Proceedings of the 21st ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em>, 1231–1240.</li>
-            <li>Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). SMOTE: Synthetic minority over-sampling technique. <em>Journal of Artificial Intelligence Research, 16</em>, 321–357.</li>
-            <li>DeLong, E. R., DeLong, D. M., & Clarke-Pearson, D. L. (1988). Comparing the areas under two or more correlated receiver operating characteristic curves. <em>Biometrics, 44</em>(3), 837–845.</li>
+            <li>Caruana, R., et al. (2015). Intelligible models for classification and regression. <em>Proceedings of the 21st ACM SIGKDD International Conference</em>, 1231–1240.</li>
+            <li>Chawla, N. V., et al. (2002). SMOTE: Synthetic minority over-sampling technique. <em>Journal of Artificial Intelligence Research, 16</em>, 321–357.</li>
             <li>Mukherjee, A., Liu, B., & Glance, N. (2012). Spotting fake reviewer groups in consumer reviews. <em>Proceedings of the 21st International Conference on World Wide Web</em>, 191–200.</li>
           </ol>
         </div>
@@ -490,13 +526,13 @@
       </div>
     </div>
 
-    <!-- ARTIFACT 4: CHANGE MANAGEMENT & ML CASE STUDY -->
+    <!-- ARTIFACT 2.4 -->
     <div class="artifact-card">
       <div class="artifact-header">
         <div class="artifact-header-left">
           <div class="artifact-num">2.4</div>
           <div class="artifact-title">Why Blockbuster Failed & ML Adoption: A Change Management Case Study</div>
-          <p class="artifact-intro">A strategic analysis of Blockbuster's organizational failure through the lens of change management and technological disruption — examining how resistance to ML-driven transformation, inability to adapt business models, and leadership myopia led to a $5.9B company's collapse despite Netflix's transparent strategy.</p>
+          <p class="artifact-intro">A strategic analysis of Blockbuster's organizational failure through the lens of change management and technological disruption — examining how resistance to ML-driven transformation, leadership myopia, and cultural inertia led to a $5.9B company's collapse despite Netflix's transparent strategy.</p>
           <div class="artifact-tags">
             <span class="atag">Change Management</span>
             <span class="atag">Strategy</span>
@@ -511,29 +547,16 @@
       <div class="artifact-body">
         <div class="artifact-section">
           <h4>Case Overview</h4>
-          <p>Blockbuster Entertainment Inc. was the dominant video rental business of the 1990s–2000s, operating 9,000+ stores with $5.9B in revenue. However, Netflix's founding in 1997 with mail-based DVD rentals, followed by streaming in 2007, rendered Blockbuster's physical store model obsolete. By 2013, Blockbuster's last store closed. This case examines how organizational inertia, leadership failure, and resistance to change — not technological inevitability — sealed Blockbuster's fate.</p>
-        </div>
-
-        <div class="artifact-section">
-          <h4>The Disruption Timeline</h4>
-          <ul>
-            <li><strong>1997:</strong> Netflix founded; Blockbuster has 4,500+ stores, dominant market share.</li>
-            <li><strong>2000:</strong> Netflix offers mail-based rentals; Blockbuster executives dismiss it (CEO John Antioco: "We are in the movie rental business, not the logistics business").</li>
-            <li><strong>2001:</strong> Blockbuster acquires movie database site Reel.com but fails to integrate it; still ignores Netflix.</li>
-            <li><strong>2004–2006:</strong> Netflix grows to 4M subscribers; Blockbuster launches "Total Access" (online + physical), but too late and underfunded.</li>
-            <li><strong>2007:</strong> Netflix introduces streaming (unlimited movies); Blockbuster's streaming enters too late with poor technology.</li>
-            <li><strong>2010:</strong> Blockbuster files Chapter 11 bankruptcy.</li>
-            <li><strong>2013:</strong> Last Blockbuster store closes.</li>
-          </ul>
+          <p>Blockbuster Entertainment Inc. was the dominant video rental business of the 1990s–2000s, operating 9,000+ stores with $5.9B in revenue. Netflix's founding in 1997, followed by streaming in 2007, rendered Blockbuster's physical model obsolete. By 2013, the last store closed — a failure of organizational will, not technological inevitability.</p>
         </div>
 
         <div class="artifact-section">
           <h4>Change Management Failures</h4>
           <ul>
-            <li><strong>Denial of Disruptive Innovation:</strong> Leadership dismissed Netflix as non-competitive and fundamentally misunderstood the threat.</li>
-            <li><strong>Organizational Inertia:</strong> 9,000 physical stores were both an asset and an anchor—expensive to pivot away from, impossible to ignore.</li>
-            <li><strong>Culture of Complacency:</strong> Success in the 1990s bred confidence that the business model was permanent.</li>
-            <li><strong>Fear of Cannibalization:</strong> Blockbuster feared online rentals would undermine physical store revenue—so they delayed investing in digital.</li>
+            <li><strong>Denial of Disruption:</strong> Leadership dismissed Netflix as non-competitive and misunderstood the threat entirely.</li>
+            <li><strong>Organizational Inertia:</strong> 9,000 physical stores were both an asset and an anchor — impossible to pivot away from.</li>
+            <li><strong>Fear of Cannibalization:</strong> Blockbuster feared online rentals would undermine physical store revenue — so they delayed investing in digital.</li>
+            <li><strong>Culture of Complacency:</strong> 1990s success bred confidence that the business model was permanent.</li>
             <li><strong>Lack of Strategic Vision:</strong> Leadership failed to ask: "What business are we really in?" (Answer: Entertainment delivery, not video rental).</li>
           </ul>
         </div>
@@ -541,51 +564,38 @@
         <div class="artifact-section">
           <h4>ML & Data Analytics: What They Missed</h4>
           <ul>
-            <li><strong>Customer Churn Prediction:</strong> Netflix used machine learning to identify which customers were at risk of leaving, then targeted interventions. Blockbuster had customer data but no predictive models.</li>
-            <li><strong>Recommendation Engines:</strong> Netflix's collaborative filtering ML algorithm (Cinematch) personalized recommendations better than Blockbuster's in-store recommendations.</li>
-            <li><strong>Content Optimization:</strong> Netflix used data analytics to decide which shows to produce (House of Cards was greenlit based on data, not intuition). Blockbuster had no data-driven content strategy.</li>
-            <li><strong>Logistics Optimization:</strong> Netflix optimized DVD shipping routes and streaming CDN placement using ML; Blockbuster never built this capability.</li>
-            <li><strong>Predictive Modeling:</strong> Netflix predicted market trends (streaming adoption, cord-cutting) using time-series forecasting; Blockbuster relied on gut feeling.</li>
-          </ul>
-        </div>
-
-        <div class="artifact-section">
-          <h4>Three Pillars of Change Management Breakdown</h4>
-          <ul>
-            <li><strong>Technical Readiness:</strong> Blockbuster lacked the technical talent, architecture, and mindset to build predictive systems or streaming infrastructure.</li>
-            <li><strong>Organizational Readiness:</strong> 9,000-store workforce was built for retail, not software; retraining impossible at scale.</li>
-            <li><strong>Leadership Readiness:</strong> Board and C-suite were not equipped to recognize disruption (classic "innovator's dilemma"). Decision-making was slow and reactive.</li>
+            <li><strong>Churn Prediction:</strong> Netflix used ML to identify at-risk customers; Blockbuster had data but no predictive models.</li>
+            <li><strong>Recommendation Engines:</strong> Netflix's collaborative filtering (Cinematch) personalized recommendations far beyond what in-store staff could offer.</li>
+            <li><strong>Content Strategy:</strong> Netflix greenlit House of Cards based on data; Blockbuster relied on gut feeling.</li>
+            <li><strong>Logistics Optimization:</strong> Netflix optimized DVD shipping and CDN placement via ML; Blockbuster never built this capability.</li>
           </ul>
         </div>
 
         <div class="artifact-section artifact-full">
           <h4>Lessons for Modern ML Adoption</h4>
           <ul>
-            <li><strong>Lesson 1 — Recognize Your Real Business:</strong> Blockbuster was not in the "video rental" business; they were in the "entertainment delivery" business. Reframe your business to be ML-friendly.</li>
-            <li><strong>Lesson 2 — Build Data Literacy Early:</strong> Organizations that cannot interpret data and model outputs cannot make data-driven decisions. Invest in upskilling before deploying ML.</li>
-            <li><strong>Lesson 3 — Embrace Cannibalisation:</strong> Fear of cannibalizing legacy revenue is rational but deadly. Netflix took the hit by moving to streaming; Blockbuster would not.</li>
-            <li><strong>Lesson 4 — Culture is the Bottleneck:</strong> Technology is easy; culture change is hard. Blockbuster's culture of retail operations was incompatible with software/data-driven decision-making.</li>
-            <li><strong>Lesson 5 — Start Small, Iterate Fast:</strong> Netflix started with one business model (mail) and iterated (streaming). Blockbuster tried to preserve all 9,000 stores while pivoting—impossible.</li>
+            <li><strong>Lesson 1 — Recognize Your Real Business:</strong> Reframe your identity to be ML-friendly before disruption forces it.</li>
+            <li><strong>Lesson 2 — Build Data Literacy Early:</strong> Invest in upskilling before deploying ML — organizations that cannot interpret data cannot act on it.</li>
+            <li><strong>Lesson 3 — Embrace Cannibalization:</strong> Fear of cannibalizing legacy revenue is rational but deadly in fast-moving markets.</li>
+            <li><strong>Lesson 4 — Culture is the Bottleneck:</strong> Technology is easy; culture change is hard. Blockbuster's retail culture was incompatible with data-driven decision-making.</li>
+            <li><strong>Lesson 5 — Start Small, Iterate Fast:</strong> Netflix started with mail and iterated to streaming. Blockbuster tried to preserve all 9,000 stores while pivoting — impossible.</li>
           </ul>
         </div>
 
         <div class="artifact-section artifact-full">
           <div class="value-box">
             <div class="vb-label">✦ Value Proposition</div>
-            <p>This case study demonstrates the strategic importance of change management, data literacy, and organizational agility in the face of technological disruption. It connects machine learning adoption to broader themes of business transformation, leadership decision-making, and competitive survival. For data professionals, this teaches that technical skill alone is insufficient—the ability to influence organizational culture, communicate data insights to non-technical leaders, and champion change initiatives is equally critical. Blockbuster's story is a cautionary tale for any organization sitting on legacy business models while disruption accelerates. Understanding this case is essential for anyone seeking to drive ML adoption in traditional enterprises.</p>
+            <p>This case study connects machine learning adoption to broader themes of business transformation, leadership decision-making, and competitive survival. It teaches that technical skill alone is insufficient — the ability to influence organizational culture, communicate data insights to non-technical leaders, and champion change initiatives is equally critical.</p>
           </div>
         </div>
 
         <div class="artifact-section artifact-full">
           <h4>References</h4>
           <ol class="refs-list">
-            <li>Christensen, C. M. (1997). <em>The innovator's dilemma: When new technologies cause great firms to fail</em>. Harvard Business School Press.</li>
+            <li>Christensen, C. M. (1997). <em>The innovator's dilemma</em>. Harvard Business School Press.</li>
             <li>Kotter, J. P. (1995). Leading change: Why transformation efforts fail. <em>Harvard Business Review, 73</em>(2), 59–67.</li>
-            <li>Hastie, T., Tibshirani, R., & Friedman, J. (2009). <em>The elements of statistical learning: Data mining, inference, and prediction</em> (2nd ed.). Springer.</li>
             <li>McAfee, A., Brynjolfsson, E., & Davenport, T. H. (2012). Big data: The management revolution. <em>Harvard Business Review, 90</em>(10), 60–66.</li>
-            <li>Netflix. (2005). Netflix Prize: Progress to date. <em>Netflix Blog</em>. https://blog.netflix.com/2005/09/netflix-prize-progress-to-date.html</li>
-            <li>Redd, J. (2011). <em>Blockbuster: The rise and fall of the world's biggest movie rental company</em>. History Channel Documentary.</li>
-            <li>Snyder, M. (2009). Blockbuster bankruptcy: A cautionary tale for retailers. <em>Entrepreneur Magazine</em>.</li>
+            <li>Netflix. (2005). Netflix Prize: Progress to date. <em>Netflix Blog</em>.</li>
           </ol>
         </div>
       </div>
@@ -597,6 +607,156 @@
           <span class="tool-chip">Organizational Psychology</span>
           <span class="tool-chip">Case Study</span>
           <span class="tool-chip">ML Adoption</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORKSHOP 3 DIVIDER -->
+    <div class="workshop-divider">
+      <span class="workshop-divider-label">Workshop 3</span>
+      <div class="workshop-divider-line"></div>
+    </div>
+
+    <!-- ARTIFACT 3.1 -->
+    <div class="artifact-card">
+      <div class="artifact-header">
+        <div class="artifact-header-left">
+          <div class="artifact-num">3.1</div>
+          <div class="artifact-title">Communication as a Learning Tool: Explaining Neural Networks Simply</div>
+          <p class="artifact-intro">Applying change leadership communication strategies — chunking, storytelling, and progressive disclosure — to explain neural networks using relatable analogies. Includes original posts and peer responses connecting communication theory to AI/ML change leadership.</p>
+          <div class="artifact-tags">
+            <span class="atag">Communication</span>
+            <span class="atag">Change Leadership</span>
+            <span class="atag">Neural Networks</span>
+            <span class="atag">Discussion</span>
+            <span class="atag">AI/ML Integration</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="artifact-body">
+        <div class="artifact-section">
+          <h4>Objective</h4>
+          <p>To demonstrate how change leadership communication principles make a complex AI concept — neural networks — accessible to a non-technical audience. Inspired by Einstein: if you can't explain it simply, you don't understand it well enough.</p>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Strategies Applied</h4>
+          <ul>
+            <li><strong>Chunking:</strong> Broke the explanation into three ideas — learning process, layered structure, naming origin.</li>
+            <li><strong>Storytelling:</strong> Used a child learning to recognize dogs, then a spam filter, as bridges to abstract ML concepts.</li>
+            <li><strong>Progressive Disclosure:</strong> Human-scale examples before technical terms — nodes, hidden layers, backpropagation.</li>
+            <li><strong>Two-Way Communication:</strong> Peer responses posed probing follow-up questions to deepen dialogue and model active listening.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Spam Filter Example</h4>
+          <ul>
+            <li><strong>Input Layer:</strong> Receives email data — words, sender, links.</li>
+            <li><strong>Hidden Layers:</strong> Detects patterns from simple ("FREE") to complex ("urgent tone + unknown sender + 3 links").</li>
+            <li><strong>Output Layer:</strong> Returns Spam / Not Spam with a confidence score.</li>
+            <li><strong>Backpropagation:</strong> Errors flow backward; weights adjust; accuracy improves over millions of examples.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <div class="value-box">
+            <div class="vb-label">✦ Value Proposition</div>
+            <p>Demonstrates that communication is a strategic leadership capability, not just a soft skill. Translating technical complexity into accessible narratives directly determines whether employees adopt or resist AI change — bridging data engineering expertise and organizational change leadership.</p>
+          </div>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <h4>References</h4>
+          <ol class="refs-list">
+            <li>Goodfellow, I., Bengio, Y., & Courville, A. (2016). <em>Deep learning</em>. MIT Press.</li>
+            <li>Kotter, J. P. (1995). Leading change: Why transformation efforts fail. <em>Harvard Business Review, 73</em>(2), 59–67.</li>
+            <li>Murphy, K. P. (2022). <em>Probabilistic machine learning: An introduction</em>. MIT Press.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="artifact-footer">
+        <div class="tools-row">
+          <span class="tool-chip">Discussion Board</span>
+          <span class="tool-chip">Analogical Reasoning</span>
+          <span class="tool-chip">Change Leadership</span>
+          <span class="tool-chip">Peer Learning</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARTIFACT 3.3 -->
+    <div class="artifact-card">
+      <div class="artifact-header">
+        <div class="artifact-header-left">
+          <div class="artifact-num">3.3</div>
+          <div class="artifact-title">Collaborative AI Learning: ML Training Methods via SchoolAI</div>
+          <p class="artifact-intro">An interactive session with a pre-trained ML Training Coach on SchoolAI.com — exploring supervised, unsupervised, and reinforcement learning through Socratic dialogue. Demonstrates how AI-powered peer-style collaboration builds both technical understanding and the digital literacy essential for AI-integrated professional environments.</p>
+          <div class="artifact-tags">
+            <span class="atag">Machine Learning</span>
+            <span class="atag">SchoolAI</span>
+            <span class="atag">Supervised Learning</span>
+            <span class="atag">Reinforcement Learning</span>
+            <span class="atag">AI Collaboration</span>
+            <span class="atag">Digital Literacy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="artifact-body">
+        <div class="artifact-section">
+          <h4>Platform Overview</h4>
+          <p>SchoolAI Spaces are collaborative digital environments where learners interact with AI coaches tailored to specific learning goals. The ML Training Methods Coach adapts to each response — providing real-time feedback, correcting misunderstandings on demand, and guiding reasoning through probing questions rather than passive lecture. All interactions are encrypted, GDPR/FERPA-compliant, and visible to the instructor for participation tracking.</p>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Why Chatbot Learning?</h4>
+          <ul>
+            <li><strong>Personalized & Adaptive:</strong> Tailored to individual input — spends more time on challenging concepts without rushing.</li>
+            <li><strong>Immediate Feedback:</strong> Misunderstandings corrected in real time; follow-up clarification available on demand.</li>
+            <li><strong>Safe to Make Mistakes:</strong> No fear of judgment — builds confidence to experiment with complex topics.</li>
+            <li><strong>Always Available:</strong> Accessible anytime, anywhere — fits a working professional's schedule.</li>
+            <li><strong>Future-Ready:</strong> Practicing productive AI collaboration builds digital literacy modern organizations require.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Key Concepts Explored</h4>
+          <ul>
+            <li><strong>Supervised Learning:</strong> Trains on labeled data; prediction errors drive weight adjustment toward accuracy.</li>
+            <li><strong>Unsupervised Learning:</strong> Discovers hidden structure in unlabeled data — clustering without predefined categories.</li>
+            <li><strong>Reinforcement Learning:</strong> Agent learns optimal actions through trial, error, and reward signals.</li>
+            <li><strong>Data & Repetition:</strong> Quality data drives generalization; multiple epochs refine representations — too few = underfitting, too many = overfitting.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <div class="value-box">
+            <div class="vb-label">✦ Value Proposition</div>
+            <p>This artifact demonstrates technical ML literacy alongside the meta-skill of productive AI collaboration — increasingly the baseline expectation as organizations integrate AI tools. The session maps directly to change leadership: supervised learning mirrors structured onboarding, reinforcement learning mirrors iterative pilot programs, and data quality mirrors communication quality in change initiatives. Engaging with SchoolAI also models for future leaders how to learn alongside AI systems — asking precise questions, evaluating outputs critically, and building understanding iteratively.</p>
+          </div>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <h4>References</h4>
+          <ol class="refs-list">
+            <li>IBM Developer. (2023). A beginner's guide to machine learning, AI, and cognitive computing. https://developer.ibm.com/articles/cc-beginner-guide-machine-learning-ai-cognitive/</li>
+            <li>SchoolAI. (2024). <em>ML Training Methods Coach</em> [AI chatbot interaction]. SchoolAI.com.</li>
+            <li>Sutton, R. S., & Barto, A. G. (2018). <em>Reinforcement learning: An introduction</em> (2nd ed.). MIT Press.</li>
+            <li>Murphy, K. P. (2022). <em>Probabilistic machine learning: An introduction</em>. MIT Press.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="artifact-footer">
+        <div class="tools-row">
+          <span class="tool-chip">SchoolAI</span>
+          <span class="tool-chip">Supervised Learning</span>
+          <span class="tool-chip">Reinforcement Learning</span>
+          <span class="tool-chip">AI Collaboration</span>
+          <span class="tool-chip">Critical Thinking</span>
         </div>
       </div>
     </div>
