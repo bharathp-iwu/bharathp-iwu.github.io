@@ -761,6 +761,143 @@
       </div>
     </div>
 
+    <!-- WORKSHOP 4 DIVIDER -->
+    <div class="workshop-divider">
+      <span class="workshop-divider-label">Workshop 4</span>
+      <div class="workshop-divider-line"></div>
+    </div>
+
+    <!-- ARTIFACT 4.3 -->
+    <div class="artifact-card">
+      <div class="artifact-header">
+        <div class="artifact-header-left">
+          <div class="artifact-num">4.3</div>
+          <div class="artifact-title">Data Challenge Scenarios: AI Chatbot Interaction</div>
+          <p class="artifact-intro">An interactive coaching session with a pre-trained Data Challenges bot exploring real-world ML problems — missing data, outlier detection, class imbalance, and data quality — connecting each scenario to practical decisions in enterprise data and AI environments.</p>
+          <div class="artifact-tags">
+            <span class="atag">Data Quality</span>
+            <span class="atag">Missing Data</span>
+            <span class="atag">Class Imbalance</span>
+            <span class="atag">Outlier Detection</span>
+            <span class="atag">AI Coaching</span>
+            <span class="atag">ML Practice</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="artifact-body">
+        <div class="artifact-section">
+          <h4>Objective</h4>
+          <p>To work through real-world data challenges through Socratic AI dialogue — reasoning through problems out loud rather than reading about them passively. Each scenario required explaining a decision and its tradeoffs, pushing beyond surface-level answers into the downstream model implications.</p>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Scenarios Covered</h4>
+          <ul>
+            <li><strong>Missing Student Scores:</strong> Identified why data is missing before choosing a fix — MCAR vs. MAR vs. MNAR — and selected imputation strategy based on missingness type and volume.</li>
+            <li><strong>Wearable Sensor Outliers:</strong> Separated impossible readings from unusual-but-valid ones; applied IQR, Isolation Forest, and DBSCAN; validated removal using RMSE comparison.</li>
+            <li><strong>Hate Speech Imbalance:</strong> Addressed 2% minority class using SMOTE, class weighting, focal loss, and BERT fine-tuning; replaced accuracy with F1 and AUC-ROC.</li>
+            <li><strong>Revenue Classification:</strong> Chose accuracy plus confusion matrix over error metrics for a categorical prediction problem; applied macro F1 for imbalanced class distribution.</li>
+            <li><strong>Retail Data Quality:</strong> Identified upstream audit, validation rules at entry point, and manual spot checks as prevention steps for the messy-data model failure.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Key Takeaways</h4>
+          <ul>
+            <li>The reason data is missing matters as much as the fact that it's missing — missingness pattern drives the fix.</li>
+            <li>A 98% accurate model can be completely useless — metric choice is a modeling decision, not an afterthought.</li>
+            <li>Bias and data quality are not separate problems — bad data quality creates bias before training even starts.</li>
+            <li>Post-deployment monitoring is not optional — bias and model drift appear after launch as real-world patterns shift.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <div class="value-box">
+            <div class="vb-label">✦ Value Proposition</div>
+            <p>This session reinforced that data processing decisions are not just technical cleanup tasks — they are modeling decisions with real downstream consequences. Working through these scenarios in dialogue format forced deeper reasoning than passive reading would have. The skills practiced here apply directly to building reliable AI pipelines for supply chain, finance, and sales reporting at Qualcomm, where data quality issues and imbalanced datasets are routine challenges.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="artifact-footer">
+        <div class="tools-row">
+          <span class="tool-chip">SchoolAI Chatbot</span>
+          <span class="tool-chip">SMOTE</span>
+          <span class="tool-chip">Isolation Forest</span>
+          <span class="tool-chip">Imputation</span>
+          <span class="tool-chip">Model Evaluation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARTIFACT 4.4 -->
+    <div class="artifact-card">
+      <div class="artifact-header">
+        <div class="artifact-header-left">
+          <div class="artifact-num">4.4</div>
+          <div class="artifact-title">Navigating Human Bias in AI: A Value Statement for Data & AI Leaders</div>
+          <p class="artifact-intro">A personal leadership value statement and field-specific strategies for identifying and addressing human bias in AI systems — developed from the perspective of an IT professional building data pipelines, enterprise data hubs, and AI reporting solutions for supply chain, finance, and sales teams at a semiconductor company.</p>
+          <div class="artifact-tags">
+            <span class="atag">Human Bias</span>
+            <span class="atag">AI Ethics</span>
+            <span class="atag">Change Leadership</span>
+            <span class="atag">Data Governance</span>
+            <span class="atag">Responsible AI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="artifact-body">
+        <div class="artifact-section">
+          <h4>Personal Value Statement</h4>
+          <p>The systems I build don't just process data — they influence real business decisions. Biased pipelines, skewed reporting logic, or unrepresentative training sets can quietly distort forecasts and disadvantage suppliers or markets without anyone noticing. My core value is to build transparent, auditable AI systems where bias is treated as a technical defect — not an acceptable tradeoff.</p>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Field-Specific Strategies</h4>
+          <ul>
+            <li><strong>Audit Pipelines at the Source:</strong> Supply chain and sales data embeds historical bias — vendor preferences, regional prioritization — before training even starts. Review upstream before data enters the hub.</li>
+            <li><strong>Diverse Stakeholder Reviews:</strong> Involve supply chain, finance, and sales reviewers in AI rollouts — not just engineers — to catch blind spots that technical teams lack functional context to see.</li>
+            <li><strong>Explainable Outputs:</strong> Business teams acting on AI reports need to understand why a recommendation was made so they can flag outputs that feel wrong rather than blindly trusting them.</li>
+            <li><strong>Post-Deployment Monitoring:</strong> Bias drifts in as business conditions change. Monitor model performance across supplier segments, regions, and product lines over time — not just at launch.</li>
+            <li><strong>Standardize Labeling Across Teams:</strong> Sales and finance often classify the same customer differently. Shared data definitions across business units prevent skewed aggregations before AI processes them.</li>
+            <li><strong>Challenge Historical Baselines:</strong> Legacy reports used as training ground truth inherit their original flawed assumptions. Question whether historical data actually reflects fair business reality before using it to train models.</li>
+            <li><strong>Flag Low-Confidence Predictions:</strong> New suppliers, emerging markets, and low-volume product lines have sparse training data. Surface uncertainty indicators in dashboards so users know when to apply human judgment.</li>
+            <li><strong>Advocate for Diverse Hiring:</strong> Team diversity is not separate from technical quality — it is technical quality. People with similar backgrounds share similar blind spots in model design and data logic.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <div class="value-box">
+            <div class="vb-label">✦ Value Proposition</div>
+            <p>This artifact connects the technical realities of building enterprise AI systems to the ethical responsibilities of a change leader. Bias in data pipelines is not an abstract concern — it shows up in vendor selection, revenue forecasts, and sales recommendations that affect real business outcomes. Treating bias as a technical defect rather than a philosophical issue makes it something that can actually be measured, tracked, and fixed — which is the standard any responsible AI practitioner should hold themselves to.</p>
+          </div>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <h4>References</h4>
+          <ol class="refs-list">
+            <li>Barocas, S., Hardt, M., & Narayanan, A. (2023). <em>Fairness and machine learning: Limitations and opportunities</em>. MIT Press.</li>
+            <li>Kotter, J. P. (1995). Leading change: Why transformation efforts fail. <em>Harvard Business Review, 73</em>(2), 59–67.</li>
+            <li>O'Neil, C. (2016). <em>Weapons of math destruction</em>. Crown Publishers.</li>
+            <li>Doshi-Velez, F., & Kim, B. (2017). Towards a rigorous science of interpretable machine learning. <em>arXiv:1702.08608</em>.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="artifact-footer">
+        <div class="tools-row">
+          <span class="tool-chip">AI Ethics</span>
+          <span class="tool-chip">Data Governance</span>
+          <span class="tool-chip">Bias Auditing</span>
+          <span class="tool-chip">Change Leadership</span>
+          <span class="tool-chip">Responsible AI</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -769,14 +906,11 @@
   <span class="section-label">Get In Touch</span>
   <h2 class="section-title">Contact</h2>
   <div class="contact-links">
-    <a href="mailto:bpunatti@gmail.com" class="contact-link">✉ bpunatti@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#204250554e4154544960474d41494c0e434f4d" class="contact-link">✉ <span class="__cf_email__" data-cfemail="127062677c7366667b52757f737b7e3c717d7f">[email&#160;protected]</span></a>
     <a href="tel:+19254480536" class="contact-link">📞 (925) 448-0536</a>
     <a href="#" class="contact-link">💼 LinkedIn</a>
     <span class="contact-link">📍 San Diego, CA</span>
   </div>
 </section>
 
-<footer>© 2026 Bharath Punati &nbsp;·&nbsp; Data Analytics Engineering Portfolio &nbsp;·&nbsp; Indiana Wesleyan University</footer>
-
-</body>
-</html>
+<footer>© 2026 Bha
