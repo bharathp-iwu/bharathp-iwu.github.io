@@ -898,6 +898,290 @@
       </div>
     </div>
 
+    <!-- WORKSHOP 5 DIVIDER -->
+    <div class="workshop-divider">
+      <span class="workshop-divider-label">Workshop 5</span>
+      <div class="workshop-divider-line"></div>
+    </div>
+
+    <!-- ARTIFACT 5.4 -->
+    <div class="artifact-card">
+      <div class="artifact-header">
+        <div class="artifact-header-left">
+          <div class="artifact-num">5.4</div>
+          <div class="artifact-title">ML Model Validation Case Study: Satellite Lifespan Prediction</div>
+          <p class="artifact-intro">A critical analysis of an IEEE peer-reviewed study applying Random Forest, XGBoost, and Decision Tree models to predict Starlink satellite operational lifespan — examining preprocessing rigor, validation gaps, ethical blind spots, and post-deployment monitoring failures through the lens of responsible ML development.</p>
+          <div class="artifact-tags">
+            <span class="atag">Case Study</span>
+            <span class="atag">Random Forest</span>
+            <span class="atag">Model Validation</span>
+            <span class="atag">AI Ethics</span>
+            <span class="atag">Satellite ML</span>
+            <span class="atag">Option A</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="artifact-body">
+        <div class="artifact-section">
+          <h4>Case Study Overview</h4>
+          <p>Analyzed an IEEE study (Aggarwal & Singh, 2025) that tested three ML algorithms — Decision Tree, XGBoost, and Random Forest — to predict Starlink satellite lifespan using publicly available orbital parameters including launch altitude, inclination, and operational age. Random Forest achieved the best performance with an MAE of ~1.26 years. This case study was chosen because of personal prior experience in satellite data systems, providing firsthand analytical perspective.</p>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Critical Analysis</h4>
+          <ul>
+            <li><strong>Preprocessing:</strong> Team used visualization-first EDA, removed incomplete records rather than imputing, and applied normalization — a clean but conservative approach.</li>
+            <li><strong>Model Selection:</strong> Multi-algorithm comparison with quantitative metrics aligns with course best practices. Random Forest's ensemble advantage over single Decision Tree validated.</li>
+            <li><strong>Validation Gap:</strong> Basic train-test split used instead of k-fold cross-validation — a significant risk given limited satellite failure data availability.</li>
+            <li><strong>Ethics Absent:</strong> No bias audit, no demographic performance testing, no discussion of consequences when predictions fail in operational contexts.</li>
+            <li><strong>No Monitoring Plan:</strong> Study framed as algorithm comparison — no retraining triggers defined for when new satellite generations are deployed.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section">
+          <h4>What I Would Apply</h4>
+          <ul>
+            <li>Multi-algorithm comparison before committing to a final model</li>
+            <li>Visualization-first EDA before preprocessing decisions</li>
+            <li>Orbital parameters as predictive features vs. age-only proxies</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section">
+          <h4>What I Would Add</h4>
+          <ul>
+            <li>Formal k-fold cross-validation framework</li>
+            <li>Bias audit across satellite generations and altitude bands</li>
+            <li>Post-deployment monitoring plan with retraining triggers</li>
+            <li>Ethical analysis of wrong-prediction consequences for space debris</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <div class="value-box">
+            <div class="vb-label">✦ Value Proposition</div>
+            <p>This case study demonstrates the ability to critically evaluate real ML research — identifying what was done well technically while surfacing the validation, ethics, and monitoring gaps that would prevent responsible production deployment. The satellite context connects directly to prior professional experience, providing analytical depth beyond surface-level review. Key lesson: accuracy on a train-test split is not the same as a trustworthy deployed model.</p>
+          </div>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <h4>References</h4>
+          <ol class="refs-list">
+            <li>Aggarwal, S., & Singh, P. (2025). Machine learning-based prediction of Starlink satellite lifespan. <em>IEEE Conference Publication</em>. https://ieeexplore.ieee.org/document/11085551</li>
+            <li>Breiman, L. (2001). Random forests. <em>Machine Learning, 45</em>(1), 5–32.</li>
+            <li>Chen, T., & Guestrin, C. (2016). XGBoost: A scalable tree boosting system. <em>Proceedings of the 22nd ACM SIGKDD International Conference</em>, 785–794.</li>
+            <li>Mitchell, M., et al. (2019). Model cards for model reporting. <em>Proceedings of the Conference on Fairness, Accountability, and Transparency</em>, 220–229.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="artifact-footer">
+        <div class="tools-row">
+          <span class="tool-chip">Random Forest</span>
+          <span class="tool-chip">XGBoost</span>
+          <span class="tool-chip">IEEE Research</span>
+          <span class="tool-chip">Critical Analysis</span>
+          <span class="tool-chip">Responsible ML</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORKSHOP 6 DIVIDER -->
+    <div class="workshop-divider">
+      <span class="workshop-divider-label">Workshop 6</span>
+      <div class="workshop-divider-line"></div>
+    </div>
+
+    <!-- ARTIFACT 6.3 -->
+    <div class="artifact-card">
+      <div class="artifact-header">
+        <div class="artifact-header-left">
+          <div class="artifact-num">6.3</div>
+          <div class="artifact-title">The Data Signal: AI in Business Newsletter — Commercial AI Applications Across Three Industries</div>
+          <p class="artifact-intro">A professionally formatted newsletter analyzing real-world commercial AI deployments in April 2026 across healthcare & pharma, enterprise finance & supply chain, and semiconductors — examining business impact, decision-making transformation, and enterprise implications with supporting data visualizations.</p>
+          <div class="artifact-tags">
+            <span class="atag">Newsletter</span>
+            <span class="atag">Commercial AI</span>
+            <span class="atag">Healthcare</span>
+            <span class="atag">Supply Chain</span>
+            <span class="atag">Semiconductors</span>
+            <span class="atag">Industry Analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="artifact-body">
+        <div class="artifact-section">
+          <h4>Why These Industries</h4>
+          <p>Three industries were selected to represent different types of business problems being solved by AI simultaneously. Healthcare shows AI compressing research timelines that historically took decades. Finance and supply chain shows AI eliminating administrative burden from enterprise operations. Semiconductors shows AI managing the complexity of a nearly trillion-dollar global supply chain under geopolitical pressure. Together they illustrate the breadth of commercial AI deployment in April 2026 — and all three connect directly to the professional context of building data and AI tools at Qualcomm.</p>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Industry 1: Healthcare & Pharma</h4>
+          <ul>
+            <li><strong>Novo Nordisk × OpenAI (April 14, 2026):</strong> Full enterprise AI integration from drug discovery to supply chain — full deployment by end of 2026.</li>
+            <li><strong>Impact:</strong> 25% faster discovery timelines, 70% reduction in clinical trial costs, $160B market forecast by 2035.</li>
+            <li><strong>McKinsey estimate:</strong> Generative AI could save pharma $60–110 billion annually at maturity.</li>
+            <li><strong>Regulatory context:</strong> EU AI Act high-risk provisions take effect August 2026 — explainable AI pipelines become compliance advantage.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Industry 2: Finance & Supply Chain</h4>
+          <ul>
+            <li><strong>Oracle Fusion Agentic Applications (April 9, 2026):</strong> 12 AI agents embedded directly in Oracle Fusion Cloud handling document extraction, risk monitoring, and workflow automation.</li>
+            <li><strong>Impact:</strong> 50% reduction in manual workflow time in early deployments.</li>
+            <li><strong>Design principle:</strong> Built-in ROI measurement tools address the most common enterprise AI adoption blocker — proving returns to leadership.</li>
+            <li><strong>Supply chain angle:</strong> Real-time disruption monitoring and alternative sourcing recommendations for geopolitically volatile component markets.</li>
+          </ul>
+        </div>
+
+        <!-- IMAGE ROW -->
+        <div class="artifact-full" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin: 0.5rem 0;">
+          <div style="border-radius:10px; overflow:hidden; border:1px solid var(--border);">
+            <img src="https://www.supplychaindive.com/imgproxy/7gw_3oWpRJ-3f0HwZCjSGEkO1-fRJDU7n9jH0lJZMXA=/fit/1200x628/sm:1/aHR0cHM6Ly9pbWFnZXMuc3VwcGx5Y2hhaW5kaXZlLmNvbS9jZG4tY2dpL2ltYWdlL3dpZHRoPTEyMDAsZml0PXNjYWxlLWRvd24sZm9ybWF0PWF1dG8scXVhbGl0eT03MC9odHRwczovL2ltYWdlcy5zdXBwbHljaGFpbmRpdmUuY29tL3VwbG9hZHMvMjAyNS8wMS8wNi9Eb2l0T25lU3VwcGx5Q2hhaW4uanBn" alt="AI in Supply Chain" style="width:100%; height:140px; object-fit:cover; display:block;" onerror="this.style.display='none'; this.parentElement.style.background='var(--card2)'; this.parentElement.innerHTML='<div style=\'padding:1rem; color:var(--muted); font-size:.8rem; text-align:center;\'>AI Supply Chain & Finance</div>'"/>
+          </div>
+          <div style="border-radius:10px; overflow:hidden; border:1px solid var(--border);">
+            <img src="https://www.supplychaintechnologynews.com/wp-content/uploads/2024/01/AI-Supply-Chain.jpg" alt="Supply Chain AI" style="width:100%; height:140px; object-fit:cover; display:block;" onerror="this.style.display='none'; this.parentElement.style.background='var(--card2)'; this.parentElement.innerHTML='<div style=\'padding:1rem; color:var(--muted); font-size:.8rem; text-align:center;\'>Enterprise AI Automation</div>'"/>
+          </div>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Industry 3: Semiconductors</h4>
+          <ul>
+            <li><strong>Scale:</strong> Global semiconductor revenue forecast $975B in 2026 — approaching historic $1 trillion threshold driven by AI infrastructure demand.</li>
+            <li><strong>Qualcomm / TSMC / Samsung:</strong> AI deployed for demand forecasting, geopolitical risk modeling, yield management, and alternative sourcing recommendations.</li>
+            <li><strong>Advanced packaging bottleneck:</strong> CoWoS and 3D stacking capacity is the primary AI chip supply constraint — AI-driven scheduling being applied to optimize allocation.</li>
+            <li><strong>Yield management:</strong> AI defect prediction systems replacing manual inspection, recovering hundreds of millions in production value at volume scale.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Key Stats Across All Three</h4>
+          <ul>
+            <li>Healthcare: $160B AI drug discovery market by 2035 · 70% trial cost reduction</li>
+            <li>Finance/SC: 50% manual workflow reduction · 12 Oracle AI agents deployed</li>
+            <li>Semiconductors: $975B market · $650B AI infra capex · 30%+ YoY chip growth</li>
+            <li>Common thread: AI removes administrative burden — humans focus on judgment</li>
+          </ul>
+        </div>
+
+        <div class="artifact-full" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin: 0.5rem 0;">
+          <div style="border-radius:10px; overflow:hidden; border:1px solid var(--border);">
+            <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/irk.LGJoIJTU/v1/-1x-1.jpg" alt="Semiconductor AI" style="width:100%; height:140px; object-fit:cover; display:block;" onerror="this.style.display='none'; this.parentElement.style.background='var(--card2)'; this.parentElement.innerHTML='<div style=\'padding:1rem; color:var(--muted); font-size:.8rem; text-align:center;\'>Semiconductor AI Manufacturing</div>'"/>
+          </div>
+          <div style="border-radius:10px; overflow:hidden; border:1px solid var(--border);">
+            <img src="https://media.nature.com/lw767/magazine-assets/d41586-023-00190-4/d41586-023-00190-4_24683892.jpg" alt="AI Drug Discovery" style="width:100%; height:140px; object-fit:cover; display:block;" onerror="this.style.display='none'; this.parentElement.style.background='var(--card2)'; this.parentElement.innerHTML='<div style=\'padding:1rem; color:var(--muted); font-size:.8rem; text-align:center;\'>AI Drug Discovery Research</div>'"/>
+          </div>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <div class="value-box">
+            <div class="vb-label">✦ Value Proposition</div>
+            <p>This newsletter demonstrates the ability to research, synthesize, and professionally communicate commercial AI developments across multiple industries simultaneously. The analysis goes beyond summarizing announcements — it connects each deployment to the underlying business problem being solved, the organizational change required to adopt it, and the professional context of building AI tools for supply chain and finance teams at Qualcomm. The interactive HTML version is hosted publicly and demonstrates full-stack communication capability from research through publication.</p>
+          </div>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <h4>Sources</h4>
+          <ol class="refs-list">
+            <li>Novo Nordisk / OpenAI partnership. (2026, April 14). CNBC / BioPharm International / Novo Nordisk Press Release.</li>
+            <li>Oracle Fusion Agentic Applications launch. (2026, April 9). Oracle Press Release / StockTitan.</li>
+            <li>AI demand pushes semiconductor revenues. (2026). Astute Group / Omdia / CrispIdea Research.</li>
+            <li>AI in drug discovery market forecast. (2026). Business Upturn / SR Analytics.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="artifact-footer">
+        <div class="tools-row">
+          <span class="tool-chip">HTML Newsletter</span>
+          <span class="tool-chip">Industry Analysis</span>
+          <span class="tool-chip">Commercial AI</span>
+          <span class="tool-chip">Data Visualization</span>
+          <span class="tool-chip">GitHub Pages</span>
+        </div>
+        <a href="https://bharathp-iwu.github.io/ai_newsletter.html" target="_blank" class="artifact-link">Live Newsletter ↗</a>
+      </div>
+    </div>
+
+    <!-- ARTIFACT 6.4 -->
+    <div class="artifact-card">
+      <div class="artifact-header">
+        <div class="artifact-header-left">
+          <div class="artifact-num">6.4</div>
+          <div class="artifact-title">AI Trends Discussion: Three Developments Shaping the Future of AI in April 2026</div>
+          <p class="artifact-intro">A research-backed discussion post identifying three significant AI developments from April 2026 — AI autonomously authoring peer-reviewed science, Google's TurboQuant slashing inference costs, and vibe coding compressing development timelines — with peer responses analyzing commercial AI deployments in healthcare, retail, and banking.</p>
+          <div class="artifact-tags">
+            <span class="atag">AI Trends</span>
+            <span class="atag">Discussion</span>
+            <span class="atag">AI Scientist</span>
+            <span class="atag">Vibe Coding</span>
+            <span class="atag">Inference Efficiency</span>
+            <span class="atag">Peer Engagement</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="artifact-body">
+        <div class="artifact-section">
+          <h4>Development 1: AI Writes a Peer-Reviewed Paper</h4>
+          <p>Sakana AI's AI Scientist v2 autonomously generated research hypotheses, ran experiments, analyzed data, and wrote a complete scientific paper that was accepted at a machine learning workshop and subsequently published in Nature (March 2026). This is the first documented case of an AI system completing the full scientific research cycle — from hypothesis to publication — without human authorship. The implications for research-driven industries are significant and represent a clear line being crossed in AI autonomy.</p>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Development 2: TurboQuant — 8x Cheaper AI Inference</h4>
+          <p>Google's TurboQuant algorithm, presented at ICLR 2026, cuts inference memory by at least 6x and delivers up to 8x speedup in processing. This directly addresses one of the primary constraints on enterprise AI adoption — the cost of running frontier models at scale. Cheaper inference means more companies can afford to deploy powerful AI in supply chain, finance, and operations contexts. This development has more long-term enterprise impact than most model releases because it changes the economics of deployment.</p>
+        </div>
+
+        <!-- IMAGE -->
+        <div class="artifact-full" style="border-radius:10px; overflow:hidden; border:1px solid var(--border); margin: 0.5rem 0;">
+          <img src="https://imageio.forbes.com/specials-images/imageserve/679c65a1c3bb5d00840e534d/0x0.jpg?format=jpg&width=1200" alt="AI Trends 2026" style="width:100%; height:180px; object-fit:cover; display:block;" onerror="this.style.display='none'; this.parentElement.style.background='var(--card2)'; this.parentElement.style.padding='1rem'; this.parentElement.innerHTML='<div style=\'color:var(--muted); font-size:.8rem; text-align:center; padding:2rem;\'>AI Developments April 2026</div>'"/>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Development 3: Vibe Coding Compresses Development</h4>
+          <p>Named a 2026 breakthrough by MIT Technology Review, vibe coding — building applications through natural language rather than traditional programming — is compressing development timelines that once took weeks into hours. Tools like Cursor, Claude Code, and Replit Agent let developers describe what they want and the AI builds it. A team of three with the right AI agents can now execute what previously required a department of twenty. The governance challenge: Shadow AI — employees adopting AI tools faster than IT and compliance can establish frameworks.</p>
+        </div>
+
+        <div class="artifact-section">
+          <h4>Peer Responses</h4>
+          <ul>
+            <li><strong>Healthcare AI peer:</strong> Engaged with Lantern Pharma's withZeta.ai co-scientist platform and Visa's Intelligent Commerce Connect — connecting commercial AI deployments to the organizational change required to adopt them.</li>
+            <li><strong>Microsoft Copilot peer:</strong> Extended discussion on the shift from AI answering questions to AI taking actions inside documents — and what that means for user responsibility and AI literacy gaps in organizations.</li>
+            <li><strong>Iterative AI peer:</strong> Connected the technical concept of AI iteration (gradient descent, backpropagation) to organizational change management — teams need the same iterative safety that models get during training.</li>
+          </ul>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <div class="value-box">
+            <div class="vb-label">✦ Value Proposition</div>
+            <p>This discussion demonstrates the ability to track fast-moving AI developments, distinguish signal from noise in a noisy news cycle, and connect emerging trends to their organizational implications. The three developments selected — autonomous science, infrastructure efficiency, and coding automation — each represent a different dimension of AI's expanding autonomy in 2026. Peer responses model professional academic engagement: affirming strong points, extending the analysis, and posing questions that elevate the conversation from description to application.</p>
+          </div>
+        </div>
+
+        <div class="artifact-section artifact-full">
+          <h4>Sources</h4>
+          <ol class="refs-list">
+            <li>Kersai. (2026, April 16). AI in April 2026: Biggest breakthroughs, model releases & industry shifts. https://kersai.com/ai-breakthroughs-april-2026-models-industry-shifts/</li>
+            <li>MIT Technology Review. (2026, April 21). 10 things that matter in AI right now. https://www.technologyreview.com/2026/04/21/1135643/10-ai-trends-2026/</li>
+            <li>Switas Consultancy. (2026, March). The AI avalanche: 7 breakthroughs redefining March 2026. https://www.switas.com/articles/ai-avalanche-march-2026/</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="artifact-footer">
+        <div class="tools-row">
+          <span class="tool-chip">AI Research</span>
+          <span class="tool-chip">Trend Analysis</span>
+          <span class="tool-chip">Discussion Board</span>
+          <span class="tool-chip">Peer Engagement</span>
+          <span class="tool-chip">April 2026</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
